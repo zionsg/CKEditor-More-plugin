@@ -2,7 +2,7 @@ CKEditor More plugin
 ====================
 
 This is modified from the WPMore plugin in the CKEditor extension for WordPress.<br />
-Copyright and license for the original source is in the docblock for plugin.js.
+Copyright and license for the original source and author are in the docblock for plugin.js.
 
 The WPMore plugin is used to insert the WordPress "more" link. For more information on the
 "more" link, see http://en.support.wordpress.com/splitting-content/more-tag/
