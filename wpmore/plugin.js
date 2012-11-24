@@ -32,7 +32,7 @@
  *
  * @see    http://en.support.wordpress.com/splitting-content/more-tag/ on More tag
  * @author Zion Ng <zion@intzone.com>
- * @link   [Source]
+ * @link   [Source] https://github.com/zionsg/CKEditor-More-plugin
  * @since  2012-11-24T10:00+08:00
  */
 
