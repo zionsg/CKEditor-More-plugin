@@ -124,7 +124,7 @@ CKEDITOR.plugins.add('wpmore', {
 
             // Split the current block.
             // Commented out to prevent wrapping of blocks before and after More tag
-            // if ( !hasMoved ) {
+            // if (!hasMoved) {
                 // range.splitBlock('span');
             // }
 
