@@ -39,7 +39,7 @@
 CKEDITOR.plugins.add('wpmore', {
     requires: ['fakeobjects', 'htmldataprocessor'],
 
-    init: function (editor)    {
+    init: function (editor) {
         // Add the styles that renders our fake objects.
         editor.addCss(
             'img.cke_wordpress_more'
