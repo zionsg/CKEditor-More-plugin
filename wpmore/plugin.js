@@ -9,8 +9,8 @@
  * @license   For licensing, see LICENSE.html or http://ckeditor.com/license
  *
  * The docblock above is to acknowledge the original source and author.
- * The docblock below lists my information and the changelog. The author tag
- * is just a phpDocumentor tag and does NOT imply claim of copyright or authorship of original source.
+ * The docblock below lists my information and the changelog. The @author tag
+ * is just a phpDocumentor tag and does NOT imply claim of copyright or authorship of the original source.
  *
  * The most important change is the wrapping of text before and after the More tag.
  * Sample text: The quick brown fox jumps over the lazy old dog.
