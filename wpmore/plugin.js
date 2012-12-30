@@ -10,7 +10,7 @@
  *
  * The docblock above is to acknowledge the original source and author.
  * The docblock below lists my information and the changelog. The author tag
- * is just a phpDocumentor tag and does NOT imply claim of ownership.
+ * is just a phpDocumentor tag and does NOT imply claim of copyright or authorship of original source.
  *
  * The most important change is the wrapping of text before and after the More tag.
  * Sample text: The quick brown fox jumps over the lazy old dog.
@@ -122,8 +122,8 @@ CKEDITOR.plugins.add('wpmore', {
                 element = element.getParent();
             }
 
-            // Split the current block.
             // Commented out to prevent wrapping of blocks before and after More tag
+            // Split the current block.
             // if (!hasMoved) {
                 // range.splitBlock('span');
             // }
