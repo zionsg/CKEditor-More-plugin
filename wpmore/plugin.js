@@ -9,8 +9,8 @@
  * @license   For licensing, see LICENSE.html or http://ckeditor.com/license
  *
  * The docblock above is to acknowledge the original source and author.
- * The docblock below lists my information and the changelog. The author tag
- * is just a phpDocumentor tag and does NOT imply claim of copyright or authorship of original source.
+ * The docblock below lists my information and the changelog. The @author tag
+ * is just a phpDocumentor tag and does NOT imply claim of copyright or authorship of the original source.
  *
  * The most important change is the wrapping of text before and after the More tag.
  * Sample text: The quick brown fox jumps over the lazy old dog.
@@ -29,6 +29,7 @@
  *   - Changed (old): range.splitBlock('p');
  *             (new): range.splitBlock('span');
  *   - Commented out: if (!hasMoved) { range.splitBlock('span') };
+ *   - Updated to work with both CKEditor v3 and v4
  *
  * @see    http://en.support.wordpress.com/splitting-content/more-tag/ on More tag
  * @author Zion Ng <zion@intzone.com>
@@ -37,24 +38,35 @@
  */
 
 CKEDITOR.plugins.add('wpmore', {
-    requires: ['fakeobjects', 'htmldataprocessor'],
+    requires: ['fakeobjects'],
+
+    getPlaceholderCss : function () {
+        return 'img.cke_wordpress_more'
+             + '{'
+                 + 'background-image: url(' + CKEDITOR.getUrl(this.path + 'images/more_bug.gif') + ');'
+                 + 'background-position: right center;'
+                 + 'background-repeat: no-repeat;'
+                 + 'clear: both;'
+                 + 'display: block;'
+                 + 'float: none;'
+                 + 'width: 100%;'
+                 + 'border-top: #999999 1px dotted;'
+                 + 'height: 10px;'
+             + '}'
+    },
+
+    onLoad : function () {
+        // version 4 - add the styles that renders our fake objects
+        if (CKEDITOR.addCss) {
+            CKEDITOR.addCss(this.getPlaceholderCss());
+        }
+    },
 
     init: function (editor) {
-        // Add the styles that renders our fake objects.
-        editor.addCss(
-            'img.cke_wordpress_more'
-            + '{'
-                + 'background-image: url(' + CKEDITOR.getUrl(this.path + 'images/more_bug.gif') + ');'
-                + 'background-position: right center;'
-                + 'background-repeat: no-repeat;'
-                + 'clear: both;'
-                + 'display: block;'
-                + 'float: none;'
-                + 'width: 100%;'
-                + 'border-top: #999999 1px dotted;'
-                + 'height: 10px;'
-            + '}'
-        );
+        // version 3 - add the styles that renders our fake objects
+        if (editor.addCss) {
+            editor.addCss( this.getPlaceholderCss() );
+        }
 
         // Register the toolbar buttons.
         editor.ui.addButton('WPMore', {
