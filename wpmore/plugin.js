@@ -51,7 +51,7 @@ CKEDITOR.plugins.add('wpmore', {
                  + 'float: none;'
                  + 'width: 100%;'
                  + 'border-top: #999999 1px dotted;'
-                 + 'height: 10px;'
+                 + 'height: 10px !important;'
              + '}'
     },
 
